@@ -63,8 +63,11 @@
                 </handlers>
             </logger>
         </audit-log>
-        <management-interfaces>
-            <http-interface security-realm="ManagementRealm" http-upgrade-enabled="true">
+	<management-interfaces>i
+	    <native-interface security-realm="ManagementRealm">
+                <socket-binding native="management-native"/>
+            </native-interface>
+            <http-interface security-realm="ManagementRealm" http-upgrade-enabled="true" console-enabled="true">
                 <socket-binding http="management-http"/>
             </http-interface>
         </management-interfaces>
